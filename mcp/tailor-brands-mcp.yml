@@ -1,0 +1,45 @@
+generated: '2026-08-29'
+method: probed
+source: https://www.tailorbrands.com/mcp
+status: announced-gated
+note: >-
+  Tailor Brands publishes a Model Context Protocol page — HTTP 200, title "Model Context
+  Protocol (Beta) - Tailor Brands" — but it is an APPLICATION FORM, not a server. The page
+  offers "early access to Tailor Brands' MCP and LLM integrations" and collects full name,
+  company, work email and expected monthly volume. It names no endpoint URL, no transport,
+  no install command, no package and no tools. Direct probes of mcp.tailorbrands.com (DNS
+  does not resolve), https://api.tailorbrands.com/mcp (404) and https://www.tailorbrands.com/mcp
+  with a JSON-RPC tools/list POST (returns the marketing HTML page, not JSON-RPC) all miss.
+  No tool list could be derived either: there is no OpenAPI for this provider to derive
+  candidate tools from. Because no server an agent can reach exists, NO `MCPServer` pointer
+  is emitted — emitting one would credit Tailor Brands with an agent surface it has not yet
+  shipped. Re-probe when the beta opens.
+deployment:
+  mode: none
+  endpoint: null
+  install: null
+  package: null
+  auth: unknown
+  verified: probed
+server: null
+tools: []
+tool_count: 0
+x-evidence:
+- url: https://www.tailorbrands.com/mcp
+  method: GET
+  http_status: 200
+  content_type: text/html; charset=UTF-8
+  finding: marketing + application form, title "Model Context Protocol (Beta) - Tailor Brands"
+- url: https://www.tailorbrands.com/mcp
+  method: POST tools/list
+  http_status: 200
+  content_type: text/html; charset=UTF-8
+  finding: returns HTML, not a JSON-RPC response — not an MCP endpoint
+- url: https://api.tailorbrands.com/mcp
+  method: POST tools/list
+  http_status: 404
+  finding: 404 page not found
+- url: https://mcp.tailorbrands.com/mcp
+  method: POST tools/list
+  http_status: null
+  finding: DNS does not resolve

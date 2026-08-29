@@ -1,0 +1,47 @@
+generated: '2026-08-29'
+method: searched
+source: >-
+  npm registry search (tailorbrands, tailor-brands), pypi.org, rubygems.org,
+  github.com/TailorBrands (36 public repos enumerated via the GitHub API)
+note: >-
+  NO first-party client library exists for the Tailor Embedded API. The @tailorbrands npm
+  scope publishes only internal front-end/ops tooling, and the 36 public repos in the
+  TailorBrands GitHub org are either internal build tooling or Ruby wrappers around OTHER
+  companies' APIs (The Noun Project, Shutterstock, Meaning Cloud, FontForge). Because no
+  SDK for Tailor Brands' own API was found, NO `SDKs` pointer is emitted and sdk_count
+  correctly stays at zero.
+sdk_count: 0
+disambiguation: >-
+  The npm packages under @tailor-platform/* (sdk, app-shell, erp-kit, auth-public-client)
+  belong to Tailor Inc. — the headless-ERP company at tailor.tech — and are NOT Tailor
+  Brands. They are excluded here deliberately.
+packages:
+- language: javascript
+  registry: npm
+  name: '@tailorbrands/ember-gtm'
+  url: https://www.npmjs.com/package/@tailorbrands/ember-gtm
+  install: npm install @tailorbrands/ember-gtm
+  official: true
+  api_client: false
+  version: 3.0.1
+  published: '2026-02-12'
+  note: Ember addon for Google Tag Manager. Internal front-end tooling, not an API client.
+- language: javascript
+  registry: npm
+  name: '@tailorbrands/node-exporter-prometheus'
+  url: https://www.npmjs.com/package/@tailorbrands/node-exporter-prometheus
+  install: npm install @tailorbrands/node-exporter-prometheus
+  official: true
+  api_client: false
+  version: 2.0.7
+  published: '2020-08-09'
+  note: >-
+    Prometheus metrics exporter for Express. Internal observability tooling, not an API
+    client. Last published 2020-08-09; the source repo was archived on GitHub.
+registries_checked:
+- registry: npm
+  result: 2 packages under the @tailorbrands scope, neither an API client
+- registry: pypi
+  result: 404 for tailorbrands
+- registry: rubygems
+  result: 404 for tailorbrands

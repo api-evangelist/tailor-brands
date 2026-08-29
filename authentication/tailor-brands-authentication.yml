@@ -1,0 +1,57 @@
+generated: '2026-08-29'
+method: probed
+source: >-
+  live HTTP probes of https://api.tailorbrands.com/v1/* (2026-08-29); no OpenAPI
+  securitySchemes exist to derive from and no public auth documentation was found
+note: >-
+  This profile is PROBED, not derived. Tailor Brands publishes no OpenAPI and no public
+  authentication documentation, but the live API host states its own requirement in the
+  401 response body. Every path under /v1/ — including a deliberately nonexistent control
+  path — returns the identical plain-text response, so the gate is applied at the edge
+  across the whole namespace rather than per-operation. The response carries no
+  WWW-Authenticate header, no OAuth challenge and no link to documentation, so an
+  integrator cannot discover the token format, header syntax or issuance flow without a
+  partner conversation.
+schemes:
+- id: bearer-authorization
+  type: http
+  scheme: bearer
+  in: header
+  name: Authorization
+  confidence: medium
+  evidence: >-
+    401 body "missing authentication header (Authorization or X-API-Key required)" names
+    Authorization as an accepted header; the token format is not published.
+- id: api-key
+  type: apiKey
+  in: header
+  name: X-API-Key
+  confidence: medium
+  evidence: >-
+    401 body names X-API-Key as the alternative accepted header; key format, prefix and
+    issuance flow are not published.
+oauth2: false
+openid_connect: false
+mutual_tls: unknown
+key_issuance: >-
+  Not public. Access to the Tailor Embedded API is granted through the partner early-access
+  program at https://www.tailorbrands.com/embedded.
+docs: null
+docs_note: No public authentication reference page was found on any Tailor Brands host.
+x-evidence:
+- url: https://api.tailorbrands.com/v1/openapi.json
+  http_status: 401
+  body: 'missing authentication header (Authorization or X-API-Key required)'
+- url: https://api.tailorbrands.com/v1/businesses
+  http_status: 401
+  body: 'missing authentication header (Authorization or X-API-Key required)'
+- url: https://api.tailorbrands.com/v1/zzz-nonexistent-path-xyz
+  http_status: 401
+  body: 'missing authentication header (Authorization or X-API-Key required)'
+  finding: >-
+    control probe — a path that cannot exist returns the same 401, proving the gate is
+    namespace-wide and that the 401 at /v1/openapi.json is NOT evidence a spec is served there
+- url: https://api.tailorbrands.com/
+  http_status: 404
+  body: '404 page not found'
+  finding: outside /v1/ the host 404s in plain text, so the 401 is auth, not a catch-all

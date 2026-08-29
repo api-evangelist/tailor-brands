@@ -1,0 +1,34 @@
+generated: '2026-08-29'
+method: searched
+source: >-
+  https://www.prnewswire.com/news-releases/tailor-brands-launches-tailor-embedded-bringing-business-formation-and-compliance-directly-into-partner-platforms-302659667.html
+note: >-
+  Tailor Brands advertises real-time webhooks as a headline feature of Tailor Embedded but
+  publishes no event catalog, no payload schema, no delivery/retry policy and no signature
+  verification scheme. No AsyncAPI document exists — /asyncapi.yaml, /asyncapi.json and the
+  docs hosts were all probed and missed. The webhook surface is recorded here as ADVERTISED
+  and UNDOCUMENTED; no events[] are listed because inventing event names for a legal-filing
+  API would be fabrication.
+asyncapi_spec: null
+webhooks:
+  advertised: true
+  documented: false
+  event_count: 0
+  events: []
+  delivery: unknown
+  retry_policy: unknown
+  signature_verification: unknown
+  evidence: >-
+    "a robust set of JSON API compliant endpoints and real time webhooks to support
+    predictable integrations across any tech stack" — Tailor Brands launch announcement,
+    2026-01-13.
+probes:
+- url: https://api.tailorbrands.com/asyncapi.yaml
+  status: 404
+- url: https://api.tailorbrands.com/asyncapi.json
+  status: 404
+- url: https://www.tailorbrands.com/asyncapi.yaml
+  status: 404
+- url: https://api.tailorbrands.com/v1/openapi.json
+  status: 401
+  finding: whole /v1 namespace is auth-gated; no event catalog reachable anonymously

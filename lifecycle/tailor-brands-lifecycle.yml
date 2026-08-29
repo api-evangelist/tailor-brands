@@ -1,0 +1,40 @@
+generated: '2026-08-29'
+method: probed
+source: live probes of api.tailorbrands.com and candidate status/changelog hosts, 2026-08-29
+note: >-
+  Tailor Brands publishes no versioning policy, no deprecation policy, no SLA, no changelog
+  and no status page for the Tailor Embedded API. The only lifecycle fact that could be
+  established is the URI version namespace, observed directly on the live host. No
+  `StatusPage` and no `Deprecation` pointer is emitted, because neither surface exists —
+  the pointers would assert pages the provider does not serve.
+versioning:
+  style: uri-path
+  current: v1
+  policy_published: false
+  evidence: /v1/ is the only namespace that returns 401 rather than 404 on api.tailorbrands.com
+deprecation:
+  policy_published: false
+  sunset_header: unknown
+  deprecation_header: unknown
+  rfc8594: unknown
+  deprecated_operations: []
+  note: No deprecation policy page was found; no spec exists to derive deprecated operations from.
+sla:
+  published: false
+  note: >-
+    The launch announcement claims "high availability infrastructure" but states no numeric
+    availability target, credit schedule or support response time.
+status_page:
+  present: false
+  probes:
+  - url: https://status.tailorbrands.com/
+    status: null
+    finding: DNS does not resolve
+changelog:
+  present: false
+  note: No dated API changelog or release-notes page was found on any Tailor Brands host.
+maturity:
+  stage: early-access
+  evidence: >-
+    Tailor Embedded launched 2026-01-13 "with early access offered to select partners"; the
+    MCP surface is labelled Beta and admission is by application form.

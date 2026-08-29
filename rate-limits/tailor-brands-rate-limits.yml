@@ -1,0 +1,22 @@
+generated: '2026-08-29'
+method: probed
+source: live unauthenticated requests to https://api.tailorbrands.com/v1/*, 2026-08-29
+note: >-
+  No rate limits are documented anywhere — there is no public developer documentation for
+  the Tailor Embedded API at all. Unauthenticated requests to the live host return 401 with
+  NO rate-limit headers of any kind, so nothing could be observed at runtime either. An
+  honest zero: limits may well be enforced behind the auth gate, but neither a human nor an
+  agent can discover them before integrating.
+limit_count: 0
+limits: []
+headers: []
+headers_observed: false
+exhaustion_status: unknown
+retry_after: unknown
+docs: null
+x-evidence:
+- url: https://api.tailorbrands.com/v1/businesses
+  http_status: 401
+  finding: >-
+    response carries no X-RateLimit-*, no RateLimit-*, and no Retry-After header;
+    body is plain text naming only the missing auth header

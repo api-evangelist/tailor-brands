@@ -1,0 +1,45 @@
+generated: '2026-08-29'
+method: probed
+source: https://trust.tailorbrands.com/
+note: >-
+  Tailor Brands runs a Vanta-hosted Trust Center on its own subdomain. The page returns
+  HTTP 200 and is unambiguously theirs — the CNAME resolves to
+  67f510a436a068df70a2d9a2.cname.vantatrust.com and the served HTML sets
+  <title>Tailor Brands Trust Center</title> with canonical https://trust.tailorbrands.com.
+  However the certification list is rendered entirely client-side by Vanta's React bundle:
+  the served HTML is a 5.5KB shell containing no certification names, and Vanta retired its
+  public GraphQL API (HTTP 410) while its REST trust-report endpoint requires
+  authentication (HTTP 401). NO named certification could therefore be verified, so NO
+  `Compliance` pointer is emitted — recording SOC 2 or ISO 27001 here without seeing it
+  would be fabrication. The `TrustCenter` pointer IS emitted, because the trust center
+  itself was probed and demonstrably exists.
+trust_center:
+  present: true
+  url: https://trust.tailorbrands.com/
+  vendor: Vanta
+  vendor_evidence: >-
+    CNAME 67f510a436a068df70a2d9a2.cname.vantatrust.com; assets loaded from
+    assets.vanta.com/static/index-trust-report-*.js; Vanta slug id cpzm2kfl51cl7l0bwe3q
+  certifications: []
+  certifications_verified: false
+  certifications_note: >-
+    Client-side rendered and not machine-readable. A reader must execute JavaScript to see
+    what Tailor Brands is certified against, and document downloads are typically NDA-gated
+    on Vanta trust centers.
+  documents_gated: unknown
+x-evidence:
+- url: https://trust.tailorbrands.com/
+  http_status: 200
+  content_type: text/html
+  size_bytes: 5487
+  finding: Vanta trust report SPA shell; no certification names present in served HTML
+- url: https://trust.tailorbrands.com/api/trust-report
+  http_status: 200
+  content_type: text/html
+  finding: SPA catch-all returns the same HTML shell — NOT a data document
+- url: https://api.vanta.com/v1/trust-report/cpzm2kfl51cl7l0bwe3q
+  http_status: 401
+  finding: Vanta REST trust-report endpoint requires authentication
+- url: https://api.vanta.com/graphql
+  http_status: 410
+  finding: 'Vanta public GraphQL API retired: "no longer available in favor of the Vanta REST API"'

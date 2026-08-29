@@ -1,0 +1,37 @@
+generated: '2026-08-29'
+method: searched
+source: https://www.tailorbrands.com/product-pricing
+note: >-
+  Tailor Brands publishes retail plans for its END-USER product, but publishes NO pricing
+  for the Tailor Embedded API or the MCP beta — both are early-access programs entered
+  through an application form, with commercial terms set per partner. `plan_count: 0`
+  therefore refers to API plans, which is what this artifact scores. The retail tiers are
+  recorded below under `product_plans` for context so a reader is not misled into thinking
+  the company publishes no pricing at all; they do not grant API access.
+plan_count: 0
+plans: []
+api_pricing:
+  published: false
+  model: contact-sales
+  evidence: >-
+    "Tailor Embedded is available now, with early access offered to select partners" —
+    launch announcement, 2026-01-13. The /embedded and /mcp pages both present an
+    application form rather than a price.
+product_plans:
+  note: End-user (non-API) retail plans, for context only. Prices exclude state filing fees.
+  currency: USD
+  billing_period: annual
+  source: https://www.tailorbrands.com/product-pricing
+  tiers:
+  - name: Lite
+    price: 0
+    detail: >-
+      LLC formation in 14 business days, 30-day bookkeeping trial, business coaching,
+      sales and payments, compliance filing, operating agreement, free domain, DIY website,
+      8 logos, digital business card, social media maker.
+  - name: Essential
+    price: 199
+    detail: Everything in Lite plus 1-day expedited LLC processing and legal compliance services.
+  - name: Elite
+    price: 249
+    detail: Everything in Essential plus dedicated domain and website services.

@@ -1,18 +1,73 @@
 aid: tailor-brands
 name: Tailor Brands
-description: 'Tailor Brands is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Tailor Brands is an AI-powered business-building platform for small businesses and
+  entrepreneurs, combining company formation with branding and ongoing compliance. Founded
+  in 2014 and headquartered in New York with R&D in Tel Aviv, it began as an automated logo
+  maker and expanded into a full SMB stack: LLC and C-corp/S-corp formation, EIN issuance,
+  registered agent service, annual reports and state filings, business licenses, trademarks,
+  legal documents, bookkeeping and invoicing, payments, business bank accounts, domains,
+  websites, digital business cards and print. In January 2026 the company launched Tailor
+  Embedded, exposing its business-formation and compliance engine to partner platforms as a
+  cloud-native, API-first product with JSON:API endpoints, real-time webhooks and native
+  idempotency, alongside a separate Model Context Protocol (MCP) beta for AI agents. Both
+  programs are early-access and admission is by application, so no public API reference or
+  machine-readable contract is published.
+image: https://www.tailorbrands.com/wp-content/uploads/2023/05/Tailor_Brands_Logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/tailor-brands/refs/heads/main/apis.yml
+x-api-posture: no-product-api
+x-api-posture-basis: observed
+x-api-posture-note: "Both programs are early-access and admission is by application, so no public API reference or machine-readable contract is published."
 x-type: company
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-29'
 modified: '2026-08-29'
 tags:
 - Company
-apis: []
+- Business Formation
+- Compliance
+- Small Business
+- Branding
+- Legal
+- Registered Agent
+- Embedded Finance
+- Artificial Intelligence
+- Logo Design
+apis:
+- aid: tailor-brands-embedded
+  name: Tailor Embedded API
+  description: >-
+    Tailor Embedded gives partner platforms programmatic access to Tailor Brands' business
+    formation and compliance engine — LLC formation, EIN issuance, registered agent service
+    and annual reports — so SaaS providers, fintechs, marketplaces, website builders and
+    accounting tools can offer formation and compliance inside their own product. The
+    company describes it as cloud-native and API-first, with JSON:API compliant endpoints,
+    real-time webhooks and native idempotency for reliable execution of legal filings and
+    state submissions. Launched 2026-01-13; available by early access to select partners.
+    The API host api.tailorbrands.com is live and every /v1/ path answers HTTP 401 demanding
+    an Authorization or X-API-Key header, but no public reference or OpenAPI is published.
+  humanURL: https://www.tailorbrands.com/embedded
+  baseURL: https://api.tailorbrands.com/v1
+  tags:
+  - Business Formation
+  - Compliance
+  - Embedded
+  properties:
+  - type: Authentication
+    url: authentication/tailor-brands-authentication.yml
+  - type: Conventions
+    url: conventions/tailor-brands-conventions.yml
+  - type: Webhooks
+    url: asyncapi/tailor-brands-webhooks.yml
+  - type: Lifecycle
+    url: lifecycle/tailor-brands-lifecycle.yml
+  - type: RateLimits
+    url: rate-limits/tailor-brands-rate-limits.yml
+  - type: Plans
+    url: plans/tailor-brands-plans-pricing.yml
+  - type: Conformance
+    url: conformance/tailor-brands-conformance.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -20,4 +75,52 @@ maintainers:
   email: info@apis.io
 common:
 - type: Website
-  url: https://www.hiive.com/securities/tailor-brands-stock
+  url: https://www.tailorbrands.com/
+- type: Pricing
+  url: https://www.tailorbrands.com/product-pricing
+- type: SignUp
+  url: https://www.tailorbrands.com/mcp
+- type: TermsOfService
+  url: https://www.tailorbrands.com/tos
+- type: PrivacyPolicy
+  url: https://www.tailorbrands.com/pp
+- type: Support
+  url: https://support.tailorbrands.com/hc/en-us
+- type: Blog
+  url: https://www.tailorbrands.com/blog
+- type: GitHubOrganization
+  url: https://github.com/TailorBrands
+- type: TrustCenter
+  url: https://trust.tailorbrands.com/
+- type: Packages
+  url: packages/tailor-brands-packages.yml
+- type: LLMsTxt
+  url: llms/tailor-brands-llms.txt
+- type: DomainSecurity
+  url: security/tailor-brands-domain-security.yml
+x-enrichment:
+  date: '2026-08-29'
+  status: minimal
+  artifacts_added: 12
+  pass: local-v1
+x-coverage:
+  state: gated
+  reason: sales-gate
+  detail: >-
+    Tailor Brands ships a live API at api.tailorbrands.com — every /v1/ path answers HTTP 401
+    demanding an Authorization or X-API-Key header — but the Tailor Embedded reference is
+    published nowhere: developers., developer., docs., embedded. and partners..tailorbrands.com
+    do not resolve, and both www.tailorbrands.com/embedded and /mcp are early-access
+    application forms standing in for a developer portal.
+  evidence:
+  - url: https://api.tailorbrands.com/v1/openapi.json
+    status: 401
+  - url: https://api.tailorbrands.com/v1/zzz-nonexistent-path-xyz
+    status: 401
+  - url: https://www.tailorbrands.com/mcp
+    status: 200
+  - url: https://www.tailorbrands.com/embedded
+    status: 403
+  - url: https://developers.tailorbrands.com/
+    status: 0
+  checked: '2026-08-29'

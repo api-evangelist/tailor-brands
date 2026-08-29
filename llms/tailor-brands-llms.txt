@@ -1,0 +1,50 @@
+# Tailor Brands
+
+> AI-powered business-building platform combining US company formation (LLC, C-corp,
+> S-corp), EIN issuance, registered agent service and ongoing compliance filings with
+> branding, websites and payments for small businesses. Its formation-and-compliance
+> engine is exposed to partner platforms as the Tailor Embedded API, and to AI agents
+> through a Model Context Protocol beta. Both are early-access programs admitted by
+> application; no public API reference or machine-readable contract is published.
+
+## APIs
+
+- [Tailor Embedded API](https://www.tailorbrands.com/embedded): Programmatic access to
+  business formation and compliance — LLC formation, EIN issuance, registered agent,
+  annual reports. JSON:API endpoints, real-time webhooks, native idempotency. Base URL
+  https://api.tailorbrands.com/v1 (every path returns HTTP 401 without an Authorization
+  or X-API-Key header). Early access to select partners; launched 2026-01-13.
+- [Model Context Protocol (Beta)](https://www.tailorbrands.com/mcp): An announced MCP
+  surface connecting AI agents to Tailor Brands business tools. As of 2026-08-29 the page
+  is an application form only — no server endpoint, transport, or tool list is published.
+
+## Access
+
+- [Tailor Embedded](https://www.tailorbrands.com/embedded): partner early-access program
+- [MCP Beta application](https://www.tailorbrands.com/mcp): application form for the MCP beta
+- [Product pricing](https://www.tailorbrands.com/product-pricing): end-user plans; API and
+  Embedded pricing is not published
+
+## Company
+
+- [Website](https://www.tailorbrands.com/)
+- [About](https://www.tailorbrands.com/about)
+- [Blog](https://www.tailorbrands.com/blog)
+- [Press](https://www.tailorbrands.com/press)
+- [Partners](https://www.tailorbrands.com/partners)
+- [Support (Zendesk)](https://support.tailorbrands.com/hc/en-us)
+- [Trust Center (Vanta)](https://trust.tailorbrands.com/)
+- [GitHub](https://github.com/TailorBrands)
+- [Terms of Service](https://www.tailorbrands.com/tos)
+- [Privacy Policy](https://www.tailorbrands.com/pp)
+
+## Notes for agents
+
+- There is no published OpenAPI, AsyncAPI, GraphQL SDL, Protobuf, WSDL or Postman
+  collection for any Tailor Brands API. Probed 2026-08-29 against api.tailorbrands.com,
+  www.tailorbrands.com and every candidate docs host.
+- No developer documentation host exists: developers., developer., docs., embedded. and
+  partners..tailorbrands.com all fail to resolve.
+- No first-party SDK exists in any package registry.
+- No A2A agent card is served at either /.well-known/agent-card.json or
+  /.well-known/agent.json on any host.

@@ -1,0 +1,74 @@
+generated: '2026-08-29'
+method: searched
+source: >-
+  https://www.prnewswire.com/news-releases/tailor-brands-launches-tailor-embedded-bringing-business-formation-and-compliance-directly-into-partner-platforms-302659667.html
+  (Tailor Brands' own launch announcement, 2026-01-13) plus live probes of api.tailorbrands.com
+note: >-
+  Tailor Brands publishes no developer documentation, so every convention below is taken
+  from the company's own launch announcement or from an observed HTTP response. The
+  announcement makes three concrete claims — JSON:API compliant endpoints, real-time
+  webhooks, and native idempotency — but names no header, no parameter and no field. That
+  distinction matters: the capabilities are ASSERTED by the provider but are not yet
+  ACTIONABLE by an agent, because there is nowhere to read the idempotency header name, the
+  pagination parameters or the error envelope. No `Idempotency` pointer is emitted for that
+  reason: the check rewards usable idempotency support, and nothing published here would let
+  a client actually send an idempotency key.
+auth_style:
+  style: header
+  detail: Authorization bearer or X-API-Key, observed from the live 401. See authentication/.
+versioning:
+  style: uri-path
+  current: v1
+  evidence: base path https://api.tailorbrands.com/v1 is the only version namespace that responds
+idempotency:
+  supported: true
+  status: claimed-undocumented
+  header: null
+  scope: null
+  retention: null
+  evidence: >-
+    "native idempotency ensuring reliable execution of legal filings and state submissions
+    by preventing duplicate records during retries" — Tailor Brands launch announcement,
+    2026-01-13. No header name or key format is published.
+pagination:
+  style: unknown
+  detail: >-
+    Not published. JSON:API (which the provider claims to comply with) specifies
+    page[number]/page[size] or page[offset]/page[limit] query parameters, but Tailor Brands
+    does not state which profile it implements, so this is not recorded as a fact.
+error_envelope:
+  style: unknown
+  detail: >-
+    Not published. JSON:API specifies a top-level `errors` array of error objects. The only
+    observed error responses (401, 404) are plain text, not JSON:API — see authentication/.
+rate_limit_signaling:
+  headers: []
+  detail: Not published and not observable without credentials. See rate-limits/.
+request_id_tracing:
+  supported: unknown
+field_expansion:
+  supported: unknown
+  detail: JSON:API defines `include` and `fields[TYPE]`, but conformance level is unstated.
+metadata:
+  supported: unknown
+reversibility:
+  grade: unknown
+  applicable: true
+  detail: >-
+    The API has a write surface — it files legal formation documents with US states, which
+    is among the least reversible actions an agent can take. Tailor Brands publishes no
+    cancellation, amendment, withdrawal or refund operation, and states no window for one.
+    NO window is asserted here because none is published, and inventing one on a
+    state-filing API could cost a user real money and a real legal filing.
+  operations: []
+  window: null
+  docs: null
+  note: >-
+    This is the single most consequential documentation gap in this provider's profile. An
+    agent asked to "form an LLC" through this API has no published way to learn whether the
+    filing can be cancelled before submission to the state, amended after, or refunded — and
+    state formation filings are generally irreversible once accepted. Reversibility should be
+    the first thing Tailor Brands documents when the Embedded reference goes public.
+dry_run_mode:
+  supported: unknown
+  detail: No sandbox or test mode is published. See the absence of a sandbox/ artifact.

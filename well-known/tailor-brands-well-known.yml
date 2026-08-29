@@ -1,0 +1,44 @@
+generated: '2026-08-29'
+method: probed
+source: live GET of /.well-known/* on every apis.yml host
+note: >-
+  Every probed path missed on both hosts. www.tailorbrands.com is a WordPress/Cloudflare
+  site whose 404 handler returns the full 188KB themed "Page not found" HTML page with an
+  HTTP 404 status, so the codes below are honest 404s rather than a soft-200 catch-all.
+  api.tailorbrands.com answers a plain-text "404 page not found" outside /v1/ and a
+  blanket 401 inside it. No document was fetched or saved, so NO WellKnown and NO
+  SecurityTxt pointer is emitted — this file records a verified absence, not a presence.
+hit_count: 0
+hosts:
+- host: https://www.tailorbrands.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404
+  - path: /.well-known/agent.json
+    status: 404
+  - path: /.well-known/mcp.json
+    status: 404
+- host: https://api.tailorbrands.com
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/oauth-protected-resource
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/agent-card.json
+    status: 404

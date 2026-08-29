@@ -1,0 +1,51 @@
+generated: '2026-08-29'
+method: searched
+source: >-
+  https://www.prnewswire.com/news-releases/tailor-brands-launches-tailor-embedded-bringing-business-formation-and-compliance-directly-into-partner-platforms-302659667.html
+note: >-
+  Assertions below come from Tailor Brands' own launch announcement and from live probes.
+  Nothing is derived from a spec, because no spec is published. No `Compliance` pointer is
+  emitted: a Vanta-hosted trust center exists at trust.tailorbrands.com but its certification
+  list is rendered client-side and its documents are access-gated, so no named certification
+  (SOC 2, ISO 27001, PCI DSS) could actually be verified.
+standards:
+- id: json-api
+  name: 'JSON:API'
+  conforms: true
+  confidence: low
+  evidence: >-
+    "a robust set of JSON API compliant endpoints" — Tailor Brands launch announcement,
+    2026-01-13. Provider claim only; the conformance level and JSON:API version are not
+    stated and cannot be verified without credentials.
+- id: webhooks
+  name: Real-time webhooks
+  conforms: true
+  confidence: low
+  evidence: >-
+    "real time webhooks to support predictable integrations across any tech stack" —
+    Tailor Brands launch announcement, 2026-01-13. No event catalog is published.
+- id: idempotency
+  name: Idempotent write operations
+  conforms: true
+  confidence: low
+  evidence: >-
+    "native idempotency ensuring reliable execution of legal filings and state submissions
+    by preventing duplicate records during retries" — launch announcement. Header undocumented.
+- id: oauth2
+  conforms: false
+  evidence: >-
+    401 response names Authorization and X-API-Key only; no OAuth challenge, no
+    WWW-Authenticate header, and /.well-known/oauth-authorization-server 404s on both hosts.
+- id: oidc
+  conforms: false
+  evidence: /.well-known/openid-configuration returns 404 on both www and api hosts.
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Observed 401 and 404 responses are text/plain, not application/problem+json.
+domain_standard:
+  applicable: false
+  note: >-
+    US business formation and state compliance filing has no open machine-readable
+    interchange standard comparable to SCIM, OData, HL7 or ISO 20022. State Secretary-of-State
+    filing systems are individually bespoke. This provider's market has no domain standard to
+    conform to, so the slot is left empty rather than filled — reward-only, no penalty.
