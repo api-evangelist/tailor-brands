@@ -13,6 +13,21 @@ description: >-
   idempotency, alongside a separate Model Context Protocol (MCP) beta for AI agents. Both
   programs are early-access and admission is by application, so no public API reference or
   machine-readable contract is published.
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  probe_state: gated
+  source:
+  - authentication
+  - rate-limits
+  - security
+  generated: '2026-09-03'
+  method: derived
 image: https://www.tailorbrands.com/wp-content/uploads/2023/05/Tailor_Brands_Logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/tailor-brands/refs/heads/main/apis.yml
 x-api-posture: no-product-api
