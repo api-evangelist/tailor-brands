@@ -1,18 +1,15 @@
 aid: tailor-brands
 name: Tailor Brands
-description: >-
-  Tailor Brands is an AI-powered business-building platform for small businesses and
-  entrepreneurs, combining company formation with branding and ongoing compliance. Founded
-  in 2014 and headquartered in New York with R&D in Tel Aviv, it began as an automated logo
-  maker and expanded into a full SMB stack: LLC and C-corp/S-corp formation, EIN issuance,
-  registered agent service, annual reports and state filings, business licenses, trademarks,
-  legal documents, bookkeeping and invoicing, payments, business bank accounts, domains,
-  websites, digital business cards and print. In January 2026 the company launched Tailor
-  Embedded, exposing its business-formation and compliance engine to partner platforms as a
-  cloud-native, API-first product with JSON:API endpoints, real-time webhooks and native
-  idempotency, alongside a separate Model Context Protocol (MCP) beta for AI agents. Both
-  programs are early-access and admission is by application, so no public API reference or
-  machine-readable contract is published.
+description: 'Tailor Brands is an AI-powered business-building platform for small businesses and entrepreneurs,
+  combining company formation with branding and ongoing compliance. Founded in 2014 and headquartered
+  in New York with R&D in Tel Aviv, it began as an automated logo maker and expanded into a full SMB stack:
+  LLC and C-corp/S-corp formation, EIN issuance, registered agent service, annual reports and state filings,
+  business licenses, trademarks, legal documents, bookkeeping and invoicing, payments, business bank accounts,
+  domains, websites, digital business cards and print. In January 2026 the company launched Tailor Embedded,
+  exposing its business-formation and compliance engine to partner platforms as a cloud-native, API-first
+  product with JSON:API endpoints, real-time webhooks and native idempotency, alongside a separate Model
+  Context Protocol (MCP) beta for AI agents. Both programs are early-access and admission is by application,
+  so no public API reference or machine-readable contract is published.'
 accessModel:
   pricing: unknown
   onboarding: unknown
@@ -32,7 +29,8 @@ image: https://www.tailorbrands.com/wp-content/uploads/2023/05/Tailor_Brands_Log
 url: https://raw.githubusercontent.com/api-evangelist/tailor-brands/refs/heads/main/apis.yml
 x-api-posture: no-product-api
 x-api-posture-basis: observed
-x-api-posture-note: "Both programs are early-access and admission is by application, so no public API reference or machine-readable contract is published."
+x-api-posture-note: Both programs are early-access and admission is by application, so no public API reference
+  or machine-readable contract is published.
 x-type: company
 x-source: harvest:secondary-market
 specificationVersion: '0.20'
@@ -50,18 +48,16 @@ tags:
 - Artificial Intelligence
 - Logo Design
 apis:
-- aid: tailor-brands-embedded
+- aid: tailor-brands:tailor-brands-embedded
   name: Tailor Embedded API
-  description: >-
-    Tailor Embedded gives partner platforms programmatic access to Tailor Brands' business
-    formation and compliance engine — LLC formation, EIN issuance, registered agent service
-    and annual reports — so SaaS providers, fintechs, marketplaces, website builders and
-    accounting tools can offer formation and compliance inside their own product. The
-    company describes it as cloud-native and API-first, with JSON:API compliant endpoints,
-    real-time webhooks and native idempotency for reliable execution of legal filings and
-    state submissions. Launched 2026-01-13; available by early access to select partners.
-    The API host api.tailorbrands.com is live and every /v1/ path answers HTTP 401 demanding
-    an Authorization or X-API-Key header, but no public reference or OpenAPI is published.
+  description: Tailor Embedded gives partner platforms programmatic access to Tailor Brands' business
+    formation and compliance engine — LLC formation, EIN issuance, registered agent service and annual
+    reports — so SaaS providers, fintechs, marketplaces, website builders and accounting tools can offer
+    formation and compliance inside their own product. The company describes it as cloud-native and API-first,
+    with JSON:API compliant endpoints, real-time webhooks and native idempotency for reliable execution
+    of legal filings and state submissions. Launched 2026-01-13; available by early access to select partners.
+    The API host api.tailorbrands.com is live and every /v1/ path answers HTTP 401 demanding an Authorization
+    or X-API-Key header, but no public reference or OpenAPI is published.
   humanURL: https://www.tailorbrands.com/embedded
   baseURL: https://api.tailorbrands.com/v1
   tags:
@@ -121,12 +117,10 @@ x-enrichment:
 x-coverage:
   state: gated
   reason: sales-gate
-  detail: >-
-    Tailor Brands ships a live API at api.tailorbrands.com — every /v1/ path answers HTTP 401
-    demanding an Authorization or X-API-Key header — but the Tailor Embedded reference is
-    published nowhere: developers., developer., docs., embedded. and partners..tailorbrands.com
-    do not resolve, and both www.tailorbrands.com/embedded and /mcp are early-access
-    application forms standing in for a developer portal.
+  detail: 'Tailor Brands ships a live API at api.tailorbrands.com — every /v1/ path answers HTTP 401 demanding
+    an Authorization or X-API-Key header — but the Tailor Embedded reference is published nowhere: developers.,
+    developer., docs., embedded. and partners..tailorbrands.com do not resolve, and both www.tailorbrands.com/embedded
+    and /mcp are early-access application forms standing in for a developer portal.'
   evidence:
   - url: https://api.tailorbrands.com/v1/openapi.json
     status: 401
