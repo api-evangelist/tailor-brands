@@ -64,5 +64,111 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Tailor Brands is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://www.hiive.com/securities/tailor-brands-stock
+Tailor Brands is an AI-powered business-building platform for small businesses and entrepreneurs, combining company formation with branding and ongoing compliance. Founded in 2014 and headquartered in New York with R&D in Tel Aviv, it began as an automated logo maker and expanded into a full SMB stack: LLC and C-corp/S-corp formation, EIN issuance, registered agent service, annual reports and state filings, business licenses, trademarks, legal documents, bookkeeping and invoicing, payments, business bank accounts, domains, websites, digital business cards and print. In January 2026 the company launched Tailor Embedded, exposing its business-formation and compliance engine to partner platforms as a cloud-native, API-first product with JSON:API endpoints, real-time webhooks and native idempotency, alongside a separate Model Context Protocol (MCP) beta for AI agents. Both programs are early-access and admission is by application, so no public API reference or machine-readable contract is published.
+
+**Areas:** Company · Business Formation · Compliance · Small Business · Branding · Legal · Registered Agent · Embedded Finance · Artificial Intelligence · Logo Design
+
+## Tailor Brands on APIs.io
+
+Everything profiled for Tailor Brands is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/tailor-brands/](https://apis.io/providers/tailor-brands/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Tailor Embedded API](https://apis.io/apis/tailor-brands/tailor-brands-embedded/) — Tailor Embedded gives partner platforms programmatic access to Tailor Brands' business formation and compliance engine — LLC formation, EIN issuance,…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [Tailor Brands Webhooks](https://apis.io/asyncapis/tailor-brands/tailor-brands-webhooks/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Tailor Brands Authentication](https://apis.io/security/tailor-brands/tailor-brands-authentication/)
+- [Tailor Brands Domain Security](https://apis.io/security/tailor-brands/tailor-brands-domain-security/)
+- [Tailor Brands Trust Center](https://apis.io/security/tailor-brands/tailor-brands-trust-center/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Tailor Brands Plans Pricing](https://apis.io/plans/tailor-brands/tailor-brands-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Tailor Brands Rate Limits](https://apis.io/rate-limits/tailor-brands/tailor-brands-rate-limits/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.tailorbrands.com/)
+- [Pricing](https://www.tailorbrands.com/product-pricing)
+- [Sign up](https://www.tailorbrands.com/mcp)
+- [Support](https://support.tailorbrands.com/hc/en-us)
+- [Blog](https://www.tailorbrands.com/blog)
+- [Trust centre](https://trust.tailorbrands.com/)
+- [Terms of service](https://www.tailorbrands.com/tos)
+- [Privacy policy](https://www.tailorbrands.com/pp)
+- [GitHub](https://github.com/TailorBrands)
+
+## API Evangelist rating
+
+**Kin Score 34.5** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 39.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 19.0 |
+| Access clarity | 44.7 |
+
+**Agent readiness 22.3** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | yes |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 22.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/tailor-brands/](https://apis.io/providers/tailor-brands/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Tailor Brands: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/tailor-brands/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
